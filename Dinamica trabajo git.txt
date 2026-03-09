@@ -1,0 +1,50 @@
+1. El Flujo de Trabajo (The Workflow)
+Para trabajar sin líos, imagina que Git tiene tres "estaciones" por las que pasan tus cambios antes de llegar a la nube (GitHub, GitLab, etc.):
+
+Directorio de trabajo: Donde creas y editas tus archivos.
+
+Área de preparación (Staging Area): Donde seleccionas qué cambios vas a mandar.
+
+Repositorio local (Commit): Donde Git guarda la "foto" oficial de tus cambios.
+
+Repositorio remoto (Push): Donde compartes tu trabajo con el mundo.
+
+2. Los Comandos del Día a Día
+Para empezar un proyecto
+git init: Crea un repositorio nuevo en tu carpeta actual.
+
+git clone [URL]: Descarga un proyecto que ya existe en internet a tu computadora.
+
+Para guardar tus cambios
+Este es el combo que usarás el 90% del tiempo:
+
+git status: Úsalo siempre. Te dice qué archivos has modificado y qué está pasando.
+
+git add .: Agrega todos los archivos modificados al "área de preparación". Si solo quieres uno: git add nombre_del_archivo.js.
+
+git commit -m "Tu mensaje aquí": Aquí es donde "comentas" o etiquetas tus cambios. Sé descriptivo (ej: "Corregido el error en el inicio de sesión").
+
+Para enviar y traer información
+git push origin main: Sube tus cambios confirmados al servidor (la nube).
+
+git pull: Trae los cambios que otros hayan hecho y los mezcla con los tuyos. Haz esto siempre antes de empezar a trabajar para evitar conflictos.
+
+3. Las Ramas (Branches): Tu red de seguridad
+Nunca trabajes directamente sobre la rama principal (main o master) si estás probando algo nuevo. Crea una rama, equivócate ahí, y luego únala.
+
+git branch nombre-rama: Crea una rama nueva.
+
+git checkout nombre-rama: Te saltas a esa rama.
+
+git merge nombre-rama: Estando en main, traes los cambios de tu otra rama hacia la principal.
+
+Consejos de "Supervivencia"
+Configura tu identidad: Si es tu primera vez, dile a Git quién eres para que tus comentarios tengan firma:
+
+git config --global user.name "Tu Nombre"
+
+git config --global user.email "tu@email.com"
+
+El archivo .gitignore: Crea un archivo llamado así para poner los nombres de carpetas que no quieres que se suban (como contraseñas, archivos temporales o la carpeta node_modules).
+
+No entres en pánico con los "Merge Conflicts": Pasan cuando dos personas editan la misma línea. Git te pedirá que elijas qué versión dejar. Solo edita el archivo, borra las marcas feas (<<<<<<<, =======) y haz un nuevo commit.
